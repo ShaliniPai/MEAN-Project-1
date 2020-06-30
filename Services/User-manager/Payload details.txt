@@ -1,0 +1,9 @@
+//Signup payload
+
+{	
+"username":"Preetham",
+"email":"preetham123@gmail.com",
+"password":"Passw0rd_789",
+"phone":"+918310123361",
+"role":"Tenant"
+}
