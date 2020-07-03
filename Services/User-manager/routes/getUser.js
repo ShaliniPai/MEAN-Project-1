@@ -2,8 +2,8 @@
 
 const express = require("express");
 const router = express.Router();
-const auth = require("../middleware/auth");
-const User = require("../db-model/User");
+const auth = require("../../Shared-modules/middleware/auth");
+const User = require("../../Shared-modules/db-model/User");
 
 /**
  * @method - GET

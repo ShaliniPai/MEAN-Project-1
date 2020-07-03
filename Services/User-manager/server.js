@@ -2,8 +2,9 @@
 
 const express = require("express");
 const bodyParser = require("body-parser");
-const InitiateMongoServer = require("./config/db");
+const InitiateMongoServer = require("../Shared-modules/config/db");
 var routes = require("./routes/index");
+const cors = require('cors');
 
 //Establish DB Connection
 InitiateMongoServer();
@@ -11,10 +12,11 @@ InitiateMongoServer();
 const app = express();
 
 //Create PORT
-const PORT = process.env.PORT || 4000 ;
+const PORT = process.env.PORT || 8888 ;
 
 //Middleware
 app.use(bodyParser.json());
+app.use(cors());
 
 app.get("/",(req,res)=>{
     res.json({message:"API Working"});
@@ -27,5 +29,5 @@ app.get("/",(req,res)=>{
 app.use('/api/auth',routes);
 
 app.listen(PORT,(req,res)=>{
-    console.log("Server started on Port - 4000")
+    console.log("Server started on Port - 8888")
 })

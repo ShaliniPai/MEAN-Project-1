@@ -6,7 +6,7 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const router = express.Router();
 
-const User = require("../db-model/User");
+const User = require("../../Shared-modules/db-model/User");
 
 /**
  * @method - POST
@@ -84,8 +84,8 @@ router.post(
                 },
                 (err, token) => {
                     if (err) throw err;
-                    res.status(200).json({
-                        token
+                    res.status(200).json({'token':
+                        token,message:'User Registered Successfully',status:'Success'
                     });
                 }
             );
